@@ -1,0 +1,40 @@
+app:
+  name: REST-API
+  port: 8080
+cors:
+  allowed-methods: ["GET", "POST", "PATCH", "PUT", "OPTIONS", "DELETE"]
+  allowed-origins: ["http://localhost:3000"]
+  allow-credentials: true
+  allowed-headers:
+    [
+      "Authorization",
+      "Location",
+      "Charset",
+      "Access-Control-Allow-Origin",
+      "Content-Type",
+      "Origin",
+      "Accept",
+      "Content-Length",
+      "Accept-Encoding",
+      "X-CSRF-Token",
+    ]
+  options-passthrough: true
+  exposed-headers: ["Location", "Authorization", "Content-Disposition"]
+  debug: true
+db:
+  host: localhost
+  username: username
+  password: password
+  name: test_db
+  port: 5432
+log:
+  level: debug
+  encoding: json
+  outputPaths: ["stdout"]
+  errorOutputPaths: ["stderr"]
+
+  encoderConfig:
+    messageKey: message
+    levelKey: level
+    levelEncoder: lowercase
+production:

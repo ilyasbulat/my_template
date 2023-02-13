@@ -27,3 +27,11 @@ type (
 		Translate(entity.Translation) (entity.Translation, error)
 	}
 )
+
+type (
+	ProductService interface {
+	}
+	ProductRepo interface {
+		All(context.Context) ([]entity.Product, error)
+	}
+)

@@ -8,7 +8,6 @@
 *.dll
 *.so
 *.dylib
-
 # Test binary, built with `go test -c`
 *.test
 
@@ -19,8 +18,10 @@
 # vendor/
 
 # Go workspace file
+generated
 go.work
 .vscode
 .idea
 .log
+.fleet
 db-data

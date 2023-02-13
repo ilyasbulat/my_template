@@ -29,3 +29,11 @@ migrate.down:
 .PHONY: migrate.up
 migrate.up:
 	$(APP_BIN) migrate -seq up
+
+.PHONY: testdb_up
+testdb_up:
+	docker compose -f docker-compose.yml up -d
+
+.PHONY: testdb_down
+testdb_down:
+	docker compose -f docker-compose.yml down

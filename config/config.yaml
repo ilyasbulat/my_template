@@ -32,9 +32,10 @@ log:
   encoding: json
   outputPaths: ["stdout"]
   errorOutputPaths: ["stderr"]
-
   encoderConfig:
     messageKey: message
+    callerKey: caller
+    timeKey: ts
     levelKey: level
     levelEncoder: lowercase
 production:

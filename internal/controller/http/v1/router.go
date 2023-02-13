@@ -26,12 +26,11 @@ func NewRouter(router *httprouter.Router, l *zap.Logger, t usecase.Translation) 
 	router.Handler(http.MethodGet, "/swagger/*any", httpSwagger.WrapHandler)
 
 	// Routers
-
+	l.Info("register routes")
 	newTranslationRoutes(router, t, l)
 }
 
 func respond(w http.ResponseWriter, code int, data interface{}) {
-
 	w.Header().Set("Content-Type", "application/json")
 	w.WriteHeader(code)
 	if data != nil {
